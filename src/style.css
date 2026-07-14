@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FDFBF7;
+  color: #2D312E;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.page-content {
+  z-index: 10;
+  position: relative;
+}
+
+/* Background Waves */
+.wave {
+  z-index: -1;
+  position: fixed;
+  width: 4000px;
+  height: 3500px;
+  left: -90%;
+  top: -470%;
+  border-radius: 43%;
+  border: 1px solid rgba(129, 86, 29, 0.4);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.-one {
+  animation: rotate 18000ms infinite linear;
+  opacity: 0.25;
+  background: rgba(202, 184, 142, 0.7);
+}
+
+.-two {
+  animation: rotate 12000ms infinite linear;
+  opacity: 0.3;
+  background: rgba(230, 220, 200, 0.6);
+}
+
+.-three {
+  animation: rotate 15000ms infinite linear;
+  opacity: 0.2;
+  background: rgba(210, 180, 140, 0.5);
+  border: 1px solid rgba(210, 180, 140, 0.6);
+}
+
+/* Nav Shell */
+.nav-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+/* Custom Image Slider Transitions */
+.slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+}
+
+/* Screenshot Crossfade Transitions */
+.screenshot-container .ss-img {
+  transition: opacity 1.5s ease-in-out;
+}
